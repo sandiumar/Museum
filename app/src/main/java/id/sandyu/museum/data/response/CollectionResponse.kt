@@ -1,22 +1,17 @@
 package id.sandyu.museum.data.response
 
-import com.squareup.moshi.Json
+import com.google.gson.annotations.SerializedName
+import id.sandyu.museum.model.ArtObject
+
 
 data class CollectionResponse(
-    @Json(name = "artObjects") val artObjects: List<ArtObject>
-)
+    @SerializedName("countFacets") val countFacets : CountFacet,
+    @SerializedName("artObjects") val artObject: List<ArtObject>
+){
+    class CountFacet(
+        @SerializedName("hasimage") val totalImage : Int,
+        @SerializedName("ondisplay") val totalDisplay : Int
+    )
 
-data class ArtObject(
-    @Json(name = "objectNumber") val objectNumber: String,
-    @Json(name = "title") val title: String,
-    @Json(name = "webImage") val webImage: WebImage,
-    @Json(name = "headerImage") val headerImage: HeaderImage
-)
 
-data class HeaderImage(
-    @Json(name = "url") val url: String
-)
-
-data class WebImage(
-    @Json(name = "url") val url: String
-)
+}
