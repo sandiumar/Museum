@@ -7,8 +7,7 @@
     <data>
         <variable
                 name="main"
-                type="id.sandyu.museum.viewmodel.MainViewModel"
-        />
+                type="id.sandyu.museum.viewmodel.MainViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

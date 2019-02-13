@@ -2,20 +2,26 @@ package id.sandyu.museum
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import id.sandyu.museum.data.response.CollectionResponse
+import androidx.databinding.DataBindingUtil
+import id.sandyu.museum.model.CollectionResponse
+import id.sandyu.museum.databinding.ActivityMainBinding
 import io.reactivex.SingleObserver
 import io.reactivex.disposables.Disposable
-import org.reactivestreams.Subscriber
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+
+        CollectionSubscribe()
     }
 
-    fun CollectionSubscribe(): SingleObserver<CollectionResponse>{
+    private fun CollectionSubscribe(): SingleObserver<CollectionResponse>{
         val mSubscriber = object : SingleObserver<CollectionResponse> {
 
             override fun onSubscribe(d: Disposable) {
