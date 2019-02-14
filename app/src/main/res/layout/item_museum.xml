@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
 >
 
     <data>
         <variable
                 name="itemMuseum"
-                type="id.sandyu.museum.viewmodel.ItemMuseumViewModel"/>
+                type="id.sandyu.museum.model.ArtObject"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -26,7 +27,6 @@
                     tools:text="Title Collection"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    app:loadImage="@{itemMuseum.collection}"
                     android:src="@color/colorPrimary"/>
 
             <LinearLayout
@@ -36,19 +36,21 @@
 
                 <TextView
                         android:id="@+id/title"
+                        android:text="@{itemMuseum.title}"
                         android:layout_margin="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{itemMuseum.title}"
                         tools:text="Title Collection"/>
 
                 <TextView
                         android:id="@+id/maker"
+                        android:text="@{itemMuseum.maker}"
                         android:layout_margin="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{itemMovie.maker}"
                         tools:text="Maker"/>
+
+
 
             </LinearLayout>
 

@@ -8,7 +8,7 @@ import retrofit2.create
 
 
 
-class MuseumRetrofit {
+object MuseumRetrofit {
 
     fun create(): MuseumApi{
         val retrofit = Retrofit.Builder()

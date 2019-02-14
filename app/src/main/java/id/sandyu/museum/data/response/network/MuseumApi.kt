@@ -9,8 +9,8 @@ import retrofit2.http.Query
 
 interface MuseumApi {
 
-    @GET("collection/key=${BuildConfig.API_KEY}&format=json")
-    fun getCollections(@Query("p") Page: String): Single<CollectionResponse>
+    @GET("collection/?key=${BuildConfig.API_KEY}&format=json")
+    fun getCollections(@Query("p") Page: Int): Single<CollectionResponse>
 
 
 }

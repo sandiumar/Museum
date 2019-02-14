@@ -13,7 +13,7 @@ import id.sandyu.museum.viewmodel.ItemMuseumViewModel
 
 class MuseumAdapter(val context: Context) : RecyclerView.Adapter<MuseumAdapter.ViewHolder>(){
 
-    protected var museum: MutableList<CollectionResponse.CountFacet> = mutableListOf()
+    protected var museum: List<ArtObject> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MuseumAdapter.ViewHolder {
         val binding: ItemMuseumBinding = DataBindingUtil.inflate(LayoutInflater.from(context),
@@ -29,13 +29,14 @@ class MuseumAdapter(val context: Context) : RecyclerView.Adapter<MuseumAdapter.V
         holder.bindData(museum[holder.adapterPosition])
     }
 
-    fun setData(museums: MutableList<CollectionResponse.CountFacet>){
+    fun setData(museums: List<ArtObject>){
         this.museum = museums
     }
 
     class ViewHolder(private val binding: ItemMuseumBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bindData(model: CollectionResponse.CountFacet){
-            val viewModel = ItemMuseumViewModel(model)
+        fun bindData(model: ArtObject){
+           binding.itemMuseum = model
+            binding.executePendingBindings()
         }
     }
 

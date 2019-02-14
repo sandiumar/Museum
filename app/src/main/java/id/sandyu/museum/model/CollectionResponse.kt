@@ -11,7 +11,4 @@ data class CollectionResponse(
         @SerializedName("hasimage") val totalImage : Int,
         @SerializedName("ondisplay") val totalDisplay : Int
     )
-
-
-
 }
