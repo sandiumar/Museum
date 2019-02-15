@@ -5,15 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import id.sandyu.museum.model.CollectionResponse
 import id.sandyu.museum.databinding.ItemMuseumBinding
 import id.sandyu.museum.R
-import id.sandyu.museum.model.ArtObject
-import id.sandyu.museum.viewmodel.ItemMuseumViewModel
+import id.sandyu.museum.model.ArtObjects
 
 class MuseumAdapter(val context: Context) : RecyclerView.Adapter<MuseumAdapter.ViewHolder>(){
 
-    protected var museum: List<ArtObject> = mutableListOf()
+    protected var museum: List<ArtObjects> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MuseumAdapter.ViewHolder {
         val binding: ItemMuseumBinding = DataBindingUtil.inflate(LayoutInflater.from(context),
@@ -29,12 +27,12 @@ class MuseumAdapter(val context: Context) : RecyclerView.Adapter<MuseumAdapter.V
         holder.bindData(museum[holder.adapterPosition])
     }
 
-    fun setData(museums: List<ArtObject>){
+    fun setData(museums: List<ArtObjects>){
         this.museum = museums
     }
 
     class ViewHolder(private val binding: ItemMuseumBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bindData(model: ArtObject){
+        fun bindData(model: ArtObjects){
            binding.itemMuseum = model
             binding.executePendingBindings()
         }

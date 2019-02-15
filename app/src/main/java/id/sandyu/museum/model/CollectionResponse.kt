@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class CollectionResponse(
     @SerializedName("countFacets") val countFacets : CountFacet,
-    @SerializedName("artObjects") val artObject: List<ArtObject>
+    @SerializedName("artObjects") val artObject: List<ArtObjects>
 ){
     data class CountFacet(
         @SerializedName("hasimage") val totalImage : Int,

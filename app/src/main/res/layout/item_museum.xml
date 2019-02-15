@@ -8,7 +8,7 @@
     <data>
         <variable
                 name="itemMuseum"
-                type="id.sandyu.museum.model.ArtObject"/>
+                type="id.sandyu.museum.model.ArtObjects"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -22,11 +22,13 @@
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
             <ImageView
                     android:id="@+id/collection"
                     tools:text="Title Collection"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    app:webImage="@{itemMuseum.collection}"
                     android:src="@color/colorPrimary"/>
 
             <LinearLayout
