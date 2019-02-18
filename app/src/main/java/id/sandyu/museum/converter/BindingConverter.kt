@@ -9,7 +9,7 @@ class BindingConverter {
 
         @JvmStatic
         @BindingAdapter("webImage")
-        fun webImage(imageView: ImageView, url: String){
+        fun webImage(imageView: ImageView, url:String){
             Picasso.get().load(url).into(imageView)
         }
     }

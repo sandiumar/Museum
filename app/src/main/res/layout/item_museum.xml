@@ -26,9 +26,9 @@
             <ImageView
                     android:id="@+id/collection"
                     tools:text="Title Collection"
+                    app:webImage="@{itemMuseum.collection}"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    app:webImage="@{itemMuseum.collection}"
                     android:src="@color/colorPrimary"/>
 
             <LinearLayout
