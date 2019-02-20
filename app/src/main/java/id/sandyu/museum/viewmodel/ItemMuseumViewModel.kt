@@ -12,7 +12,7 @@ class ItemMuseumViewModel(model: ArtObjects): ViewModel() {
     init {
         title.set(model.title)
         principalOrFirstMaker.set(model.maker)
-        url.set(model.webImage.collection)
+        url.set(model.webImage.url)
 
     }
 } 

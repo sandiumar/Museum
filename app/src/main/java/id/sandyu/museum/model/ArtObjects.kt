@@ -16,7 +16,7 @@ data class ArtObjects(
     )
 
     data class WebImage(
-        @SerializedName("url")val collection: String
+        @SerializedName("url")val url: String
     )
 
     data class HeaderImage(

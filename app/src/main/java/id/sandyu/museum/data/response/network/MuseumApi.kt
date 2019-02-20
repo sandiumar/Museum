@@ -5,6 +5,7 @@ import id.sandyu.museum.model.CollectionResponse
 import id.sandyu.museum.model.DetailResponse
 import io.reactivex.Single
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -14,8 +15,8 @@ interface MuseumApi {
     fun getCollections(@Query("p") Page: Int): Single<CollectionResponse>
 
 
-    @GET("collection/${BuildConfig.id}?key=${BuildConfig.API_KEY}&format=json")
-    fun getDetails(@Query("object-number") ObjectNumber: String) : Single<DetailResponse>
+    @GET("collection/{id}?key=${BuildConfig.API_KEY}&format=json")
+    fun getDetails(@Path("id") id: String) : Single<DetailResponse>
 
 
 

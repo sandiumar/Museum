@@ -24,10 +24,10 @@
                 android:layout_height="wrap_content">
 
             <ImageView
-                    android:id="@+id/collection"
-                    tools:text="Title Collection"
-                    app:webImage="@{itemMuseum.collection}"
+                    android:id="@+id/url"
+                    tools:text="Image Collection"
                     android:layout_width="75dp"
+                    app:webImage="@{itemMuseum.webImage.url}"
                     android:layout_height="75dp"
                     android:src="@color/colorPrimary"/>
 
@@ -42,6 +42,7 @@
                         android:layout_margin="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         tools:text="Title Collection"/>
 
                 <TextView
@@ -50,6 +51,7 @@
                         android:layout_margin="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         tools:text="Maker"/>
 
 

@@ -2,7 +2,7 @@ package id.sandyu.museum.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ArtObject(
+data class ArtObjectDetail(
     @SerializedName("links")val links: Links,
     @SerializedName("id")val id: String,
     @SerializedName("priref")val priref: Int,

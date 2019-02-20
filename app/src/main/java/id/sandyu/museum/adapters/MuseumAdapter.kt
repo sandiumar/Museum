@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import id.sandyu.museum.databinding.ItemMuseumBinding
 import id.sandyu.museum.R
 import id.sandyu.museum.model.ArtObjects
+import id.sandyu.museum.viewmodel.ItemMuseumViewModel
 
 class MuseumAdapter(val context: Context) : RecyclerView.Adapter<MuseumAdapter.ViewHolder>(){
 
