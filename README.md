@@ -1,5 +1,5 @@
 # Museum
-This Application is use to view Art Collection from Rijksmuseum
+This Application is use to view Art Collection from Rijksmuseum using RijksMuseum API
 
 Tech Stack & Tools that I use :
 - Kotlin
@@ -7,6 +7,7 @@ Tech Stack & Tools that I use :
 - LiveData 
 - RxJava2
 - Picasso
+
 
 
 
