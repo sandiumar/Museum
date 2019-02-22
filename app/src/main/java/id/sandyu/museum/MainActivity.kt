@@ -1,5 +1,6 @@
 package id.sandyu.museum
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -38,7 +39,16 @@ class MainActivity : AppCompatActivity() {
     private fun setRecyclerView(){
         val layoutManager = LinearLayoutManager(this)
         binding.mainRecyclerView.layoutManager = layoutManager
-        adapter = MuseumAdapter(this)
+        adapter = MuseumAdapter{
+            val intent = Intent(this, DetailCollectionActivity::class.java)
+            it.let {
+                val bundle = Bundle().apply {
+                    putParcelable("ArtObject",it)
+                }
+                intent.putExtra("ArtBundle", bundle)
+            }
+            startActivity(intent)
+        }
         binding.mainRecyclerView.adapter = adapter
 
         mainViewModel.musium.observe(this, Observer { list ->

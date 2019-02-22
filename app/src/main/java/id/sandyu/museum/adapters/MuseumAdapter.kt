@@ -11,12 +11,12 @@ import id.sandyu.museum.model.ArtObjectDetail
 import id.sandyu.museum.model.ArtObjects
 import id.sandyu.museum.viewmodel.ItemMuseumViewModel
 
-class MuseumAdapter(val context: Context) : RecyclerView.Adapter<MuseumAdapter.ViewHolder>(){
+class MuseumAdapter(val onClick: (ArtObjects) -> Unit) : RecyclerView.Adapter<MuseumAdapter.ViewHolder>(){
 
     protected var museum: List<ArtObjects> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MuseumAdapter.ViewHolder {
-        val binding: ItemMuseumBinding = DataBindingUtil.inflate(LayoutInflater.from(context),
+        val binding: ItemMuseumBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
             R.layout.item_museum, parent, false)
         return ViewHolder(binding)
     }
@@ -27,6 +27,7 @@ class MuseumAdapter(val context: Context) : RecyclerView.Adapter<MuseumAdapter.V
 
     override fun onBindViewHolder(holder: MuseumAdapter.ViewHolder, position: Int) {
         holder.bindData(museum[holder.adapterPosition])
+        holder.itemView.setOnClickListener { onClick(museum[position]) }
     }
 
     fun setData(museums: List<ArtObjects>){
@@ -39,9 +40,7 @@ class MuseumAdapter(val context: Context) : RecyclerView.Adapter<MuseumAdapter.V
             binding.executePendingBindings()
         }
 
-     override fun onMuseumClick(artObjectDetail: ArtObjectDetail) {
-         val museumViewHolder = MuseumViewHolder(LayoutInflater.from(parent.context))
-     }
+
 
     }
 
